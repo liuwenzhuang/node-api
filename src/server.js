@@ -10,13 +10,18 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-app.get('/', (req, res) => {
+const logMiddleWare = (req, res, next) => {
+  console.log('logging from logMiddleWare')
+  next()
+}
+
+app.get('/', logMiddleWare, (req, res) => {
   res.send({
     message: 'hello',
   })
 })
 
-app.post('/', (req, res) => {
+app.post('/', [logMiddleWare, logMiddleWare], (req, res) => {
   console.log('receive req body:', req.body)
   res.send(200)
 })
