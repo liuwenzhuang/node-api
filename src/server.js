@@ -17,10 +17,12 @@ const logMiddleWare = (req, res, next) => {
 
 const middleWare01 = (req, res, next) => {
   console.log('middleware 01')
+  next()
 }
 
-const middleWare01 = (req, res, next) => {
-  console.log('middleware 01')
+const middleWare02 = (req, res, next) => {
+  console.log('middleware 02')
+  next()
 }
 
 app.get('/', logMiddleWare, (req, res) => {
@@ -29,7 +31,7 @@ app.get('/', logMiddleWare, (req, res) => {
   })
 })
 
-app.post('/', [logMiddleWare, logMiddleWare], (req, res) => {
+app.post('/', [middleWare01, middleWare02], (req, res) => {
   console.log('receive req body:', req.body)
   res.send(200)
 })
