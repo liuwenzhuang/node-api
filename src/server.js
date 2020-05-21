@@ -15,6 +15,14 @@ const logMiddleWare = (req, res, next) => {
   next()
 }
 
+const middleWare01 = (req, res, next) => {
+  console.log('middleware 01')
+}
+
+const middleWare01 = (req, res, next) => {
+  console.log('middleware 01')
+}
+
 app.get('/', logMiddleWare, (req, res) => {
   res.send({
     message: 'hello',

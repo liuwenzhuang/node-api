@@ -1,9 +1,15 @@
 {
-  "extends": ["eslint:recommended", "prettier", "plugin:jest/recommended"],
+  "extends": [
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended",
+    "plugin:import/errors"
+  ],
   "plugins": ["prettier", "jest"],
   "rules": {
     // 0: off 1:warn 2:error
-    "no-console": 1
+    "no-console": 1,
+    "prettier/prettier": 2
   },
   "parserOptions": {
     "sourceType": "module"
