@@ -10,3 +10,9 @@ app.post('/', [middleWare01, middleWare02], (req, res) => {
   res.send(200)
 })
 ```
+
+## route
+
+route匹配和顺序有关，相同的route(不应存在)，上面的route会获得处理权。除非上面的route没有返回结果而进行了`next()`调用，否则下面的route不会被触发。
+
+
