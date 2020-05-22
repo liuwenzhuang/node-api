@@ -1,9 +1,9 @@
 {
   "extends": [
-    "prettier",
-    "plugin:prettier/recommended",
+    "eslint:recommended",
     "plugin:jest/recommended",
-    "plugin:import/errors"
+    "plugin:import/errors",
+    "prettier"
   ],
   "plugins": ["prettier", "jest"],
   "rules": {
@@ -12,6 +12,7 @@
     "prettier/prettier": 2
   },
   "parserOptions": {
+    "ecmaVersion": 2015,
     "sourceType": "module"
   },
   "env": {
